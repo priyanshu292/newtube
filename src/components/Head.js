@@ -38,7 +38,7 @@ const Head = () => {
           <GoSearch />
         </button>
       </div>
-      <div className="col-span-1">
+      <div className="col-span-1 cursor-pointer">
         <img className="h-8" src={user} alt="userIcon" />
       </div>
     </div>

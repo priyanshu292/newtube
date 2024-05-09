@@ -21,7 +21,7 @@ const Sidebar = () => {
   if(!isMenuOpen) return null;
 
   return (
-    <div className="p-5 shadow-lg w-60 mt-20">
+    <div className="p-5 shadow-lg w-60 mt-20 fixed">
       <ul className="cursor-pointer">
         <Link to={"/"}><li className="flex items-center hover:bg-gray-200 rounded-lg">
           <GoHome className="m-4" />
@@ -77,7 +77,7 @@ const Sidebar = () => {
           <IoIosHelpCircleOutline className="m-4" />
           <span>Help</span>
         </li>
-        <li className="flex items-center hover:bg-gray-200 rounded-lg">
+        <li className="flex items-center hover:bg-gray-200 rounded-lg mb-32">
           <MdOutlineFeedback className="m-4" />
           <span>Send feedback</span>
         </li>

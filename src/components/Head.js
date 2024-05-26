@@ -39,7 +39,7 @@ const Head = () => {
       }else{
         getSearchSuggestions()                  // making API CALL
       }
-    }, 200);
+    }, 200); //Debounce
 
     return ()=> {
       clearTimeout(timer);

@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import ChatMessage from "./ChatMessage";
 import { useDispatch, useSelector } from "react-redux";
 import { addMessage } from "../utils/chatSlice";
-import { generateRandomNames } from "../utils/helper";
-import { makeRandomMessage } from "../utils/helper";
 import { IoMdSend } from "react-icons/io";
+import mock_data from "../utils/mock_data.json"
 
 const LiveChat = () => {
   const [liveMessage, setLiveMessage] = useState("");
@@ -16,17 +15,19 @@ const LiveChat = () => {
   useEffect(() => {
     const i = setInterval(() => {
       //API Polling
+      const randomIndex = Math.floor(Math.random() * mock_data.length);
+      const randomMessage = mock_data[randomIndex];
 
       dispatch(
         addMessage({
-          name: generateRandomNames(),
-          message: makeRandomMessage(20),
+          name: randomMessage.name,
+          message: randomMessage.message,
         })
       );
     }, 1000);
 
     return () => clearInterval(i);
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
